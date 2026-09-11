@@ -1,0 +1,14 @@
+# OS / éditeurs
+Thumbs.db
+desktop.ini
+.DS_Store
+*~
+.vscode/
+.idea/
+
+# Fichiers sources non destinés aux étudiants
+*.pptx
+*.ppt
+*.key
+*.psd
+*.ai

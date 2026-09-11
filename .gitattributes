@@ -1,0 +1,14 @@
+# Traiter les médias comme binaires : pas de diff, pas de conversion de fins de ligne
+*.gif   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.svg   text eol=lf
+*.mp4   binary
+*.webm  binary
+*.pdf   binary
+
+*.html  text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf

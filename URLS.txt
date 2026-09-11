@@ -1,0 +1,2 @@
+# URLs publiques - a encoder dans les QR codes.
+# Genere par tools/make_index.py : ne pas editer a la main.

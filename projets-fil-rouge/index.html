@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projets fil rouge</title>
+<style>
+:root {
+  --bg: #fbfaf8; --fg: #1c1b19; --muted: #6b6862;
+  --line: #e3e0da; --card: #ffffff; --accent: #8a5a2b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513; --fg: #e9e6e0; --muted: #98948c;
+    --line: #2e2c28; --card: #1e1d1a; --accent: #d3a06a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 2.5rem 1.25rem 5rem;
+  background: var(--bg); color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 60rem; margin: 0 auto; }
+h1 { font-size: 1.65rem; margin: 0 0 .4rem; letter-spacing: -.01em; }
+h2 {
+  font-size: 1.05rem; margin: 2.5rem 0 .85rem; padding-bottom: .4rem;
+  border-bottom: 1px solid var(--line); font-weight: 600;
+}
+h2 .count { color: var(--muted); font-weight: 400; font-size: .85rem; }
+.lede { color: var(--muted); margin: 0 0 .5rem; max-width: 44rem; }
+a { color: var(--accent); }
+.back { display: inline-block; margin-bottom: 1.5rem; font-size: .9rem; }
+.grid {
+  display: grid; gap: 1rem; list-style: none; padding: 0; margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; overflow: hidden;
+}
+.card a.thumb {
+  display: block; background: var(--bg); border-bottom: 1px solid var(--line);
+  aspect-ratio: 16 / 10; overflow: hidden;
+}
+.card a.thumb img, .card a.thumb video {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+}
+.card .meta { padding: .7rem .85rem .8rem; }
+.card .name {
+  font-weight: 600; font-size: .92rem; word-break: break-word;
+  text-decoration: none; color: var(--fg);
+}
+.card .name:hover { color: var(--accent); }
+.card .sub { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
+.rows { list-style: none; padding: 0; margin: 0; }
+.rows li { border-bottom: 1px solid var(--line); }
+.rows a { display: flex; justify-content: space-between; gap: 1rem;
+          padding: .6rem .2rem; text-decoration: none; }
+.rows a:hover { color: var(--accent); }
+.rows .sub { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+.empty { color: var(--muted); font-style: italic; }
+footer { margin-top: 4rem; color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../">&larr; Tous les cours</a>
+<h1>Projets fil rouge</h1>
+<p class="lede">Ouvrez un fichier pour le voir en plein écran. Les liens sont stables : ils ne changeront pas.</p>
+<p class="empty">Aucun fichier pour l&rsquo;instant.</p>
+<footer>Page générée automatiquement par <code>tools/make_index.py</code>.</footer>
+</div>
+</body>
+</html>
