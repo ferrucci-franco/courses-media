@@ -89,6 +89,15 @@ a { color: var(--accent); }
 .rows .sub { color: var(--muted); font-size: .8rem; white-space: nowrap; }
 .empty { color: var(--muted); font-style: italic; }
 footer { margin-top: 4rem; color: var(--muted); font-size: .8rem; }
+/* Pas de width:100% : la video garde sa taille naturelle, bornee par la
+   fenetre. Sinon un format presque carre se retrouve avec des bandes noires. */
+.player {
+  display: block; margin: 0 auto;
+  max-width: 100%; max-height: 80vh;
+  background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.hint { color: var(--muted); font-size: .8rem; margin-top: .6rem; }
 """
 
 
@@ -110,12 +119,35 @@ def course_title(d: Path) -> str:
     return d.name.replace("-", " ").replace("_", " ").title()
 
 
+def is_video(f: Path) -> bool:
+    return f.suffix.lower() in VIDEO_EXT
+
+
 def media_files(d: Path) -> list[Path]:
-    return sorted(
+    """Medias publies du cours.
+
+    Quand un GIF a ete converti en video, les deux fichiers coexistent dans le
+    dossier : la video remplace le GIF, qui reste en local comme source et
+    n'est ni publie ni liste.
+    """
+    found = sorted(
         (p for p in d.iterdir()
          if p.is_file() and p.suffix.lower() in MEDIA_EXT),
         key=lambda p: p.name.lower(),
     )
+    video_stems = {p.stem for p in found if is_video(p)}
+    return [p for p in found if is_video(p) or p.stem not in video_stems]
+
+
+def public_path(d: Path, f: Path) -> str:
+    """Chemin public du media, relatif a la racine du site.
+
+    Une video est exposee via sa page d'enrobage : ouverte telle quelle, un MP4
+    affiche un lecteur qu'il faut demarrer a la main et qui ne boucle pas,
+    alors que la page rejoue l'animation en continu comme le ferait un GIF.
+    """
+    name = f"{f.stem}.html" if is_video(f) else f.name
+    return f"{d.name}/{name}"
 
 
 def is_course_dir(p: Path) -> bool:
@@ -148,21 +180,39 @@ def page(title: str, body: str) -> str:
 
 
 def card(f: Path) -> str:
-    href = html.escape(f.name)
+    src = html.escape(f.name)
+    href = html.escape(f"{f.stem}.html" if is_video(f) else f.name)
     name = html.escape(f.name)
     sub = f"{f.suffix.lstrip('.').upper()} &middot; {human_size(f.stat().st_size)}"
     ext = f.suffix.lower()
     if ext in IMAGE_EXT:
-        thumb = f'<a class="thumb" href="{href}"><img src="{href}" alt="" loading="lazy"></a>'
-    elif ext in VIDEO_EXT:
+        thumb = f'<a class="thumb" href="{href}"><img src="{src}" alt="" loading="lazy"></a>'
+    elif is_video(f):
         thumb = (f'<a class="thumb" href="{href}">'
-                 f'<video src="{href}" muted preload="metadata"></video></a>')
+                 f'<video src="{src}" muted preload="metadata"></video></a>')
     else:
         thumb = ""
     return (
         f'<li class="card">{thumb}'
         f'<div class="meta"><a class="name" href="{href}">{name}</a>'
         f'<div class="sub">{sub}</div></div></li>'
+    )
+
+
+def write_video_page(d: Path, f: Path) -> None:
+    """Page d'enrobage d'une video : rejouee en boucle, comme un GIF."""
+    src = html.escape(f.name)
+    title = f.stem.replace("-", " ").replace("_", " ")
+    body = [
+        f'<a class="back" href="./">&larr; {html.escape(course_title(d))}</a>',
+        f"<h1>{html.escape(title)}</h1>",
+        f'<video class="player" src="{src}" autoplay loop muted playsinline '
+        f"controls></video>",
+        '<p class="hint">L\'animation tourne en boucle. '
+        "Utilisez les commandes pour la mettre en pause.</p>",
+    ]
+    (d / f"{f.stem}.html").write_text(
+        page(title, "\n".join(body)), encoding="utf-8"
     )
 
 
@@ -182,6 +232,9 @@ def write_course_page(d: Path) -> int:
     else:
         body.append('<p class="empty">Aucun fichier pour l&rsquo;instant.</p>')
     (d / "index.html").write_text(page(title, "\n".join(body)), encoding="utf-8")
+    for f in files:
+        if is_video(f):
+            write_video_page(d, f)
     return len(files)
 
 
@@ -205,7 +258,7 @@ def write_home(counts: dict[Path, int]) -> None:
         body.append('<ul class="rows">')
         for f in files:
             body.append(
-                f'<li><a href="{html.escape(d.name)}/{html.escape(f.name)}">'
+                f'<li><a href="{html.escape(public_path(d, f))}">'
                 f"<span>{html.escape(f.name)}</span>"
                 f'<span class="sub">{human_size(f.stat().st_size)}</span></a></li>'
             )
@@ -229,7 +282,7 @@ def write_urls(counts: dict[Path, int]) -> int:
             continue
         lines.append(f"## {course_title(d)}")
         for f in files:
-            lines.append(f"{BASE_URL}/{d.name}/{f.name}")
+            lines.append(f"{BASE_URL}/{public_path(d, f)}")
             total += 1
         lines.append("")
     (ROOT / "URLS.txt").write_text("\n".join(lines), encoding="utf-8")

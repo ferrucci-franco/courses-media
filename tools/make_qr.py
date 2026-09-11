@@ -171,7 +171,7 @@ def main() -> int:
         manifest.append(f"## {mi.course_title(d)}")
 
         for f in files:
-            url = f"{mi.BASE_URL}/{d.name}/{f.name}"
+            url = f"{mi.BASE_URL}/{mi.public_path(d, f)}"
             qr = segno.make(url, error=args.error, boost_error=not args.no_boost)
             base = names[f]
 

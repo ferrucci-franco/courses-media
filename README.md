@@ -57,9 +57,18 @@ place.
 ## Formats et poids
 
 - **GIF** : pratique, mais les exports PowerPoint sont lourds (5–30 Mo).
-- **MP4 / WebM** : 10 à 20 fois plus légers à qualité égale, lus directement par
-  le navigateur. À privilégier au-delà de ~2 Mo — les étudiants ouvrent ces
-  liens en 4G.
+- **MP4 / WebM** : 10 à 20 fois plus légers à qualité égale. À privilégier
+  au-delà de ~2 Mo — les étudiants ouvrent ces liens en 4G.
+
+Une vidéo n'est pas publiée telle quelle : `make_index.py` lui génère une page
+d'enrobage `<nom>.html` qui la rejoue en boucle, et c'est cette page que
+visent la galerie et le QR code. Ouvert directement, un MP4 affiche un lecteur
+qu'il faut démarrer à la main et qui ne boucle pas ; la page restitue le
+comportement d'un GIF pour un dixième du poids.
+
+Quand un GIF est converti, les deux fichiers peuvent cohabiter dans le dossier :
+la vidéo remplace le GIF, qui n'est alors ni listé ni publié. Ajouter le GIF
+à `.gitignore` pour ne pas le pousser par mégarde.
 - Limites GitHub : avertissement à 50 Mo, blocage à 100 Mo par fichier.
 - **Pas de Git LFS** : les quotas de bande passante s'appliqueraient aux
   téléchargements des étudiants.

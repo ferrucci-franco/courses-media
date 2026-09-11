@@ -16,3 +16,8 @@ desktop.ini
 # Python
 __pycache__/
 *.pyc
+
+# Sources GIF remplacees par une video : gardees en local, non publiees.
+# make_index.py les ignore deja ; cette regle evite de les pousser par megarde.
+/signals/paire-conjuguee.gif
+/signals/vecteur-tournant.gif

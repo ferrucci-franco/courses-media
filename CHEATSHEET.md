@@ -116,6 +116,32 @@ cat URLS.txt
 
 ---
 
+## Convertir un GIF pesado a MP4
+
+Arriba de ~2 Mo conviene convertir: pesa 10× menos y se ve igual.
+
+```bash
+ffmpeg -i signals\animacion.gif -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart -an signals\animacion.mp4
+```
+
+Qué hace cada parte: `scale=trunc(...)` fuerza dimensiones pares (H.264 las
+exige), `crf 20` da calidad alta para diagramas con texto fino, `faststart`
+permite empezar a ver el video antes de que termine de bajar, `-an` descarta el
+audio inexistente.
+
+Después:
+
+1. Agregá el `.gif` a `.gitignore` — la versión MP4 lo reemplaza y no hace falta
+   publicar las dos.
+2. `.\update.cmd`
+
+`make_index.py` detecta que hay video y genera una página `animacion.html` que
+lo reproduce **en bucle y sin tocar nada**, igual que un GIF. Esa página es la
+que apuntan la galería y el QR: un `.mp4` abierto directo muestra un reproductor
+detenido que hay que arrancar a mano y se reproduce una sola vez.
+
+> `ffmpeg` no está instalado en esta máquina todavía.
+
 ## Regla de oro
 
 **Una URL publicada no se toca nunca más.** Cuando un QR ya está impreso en un
