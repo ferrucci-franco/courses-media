@@ -22,7 +22,11 @@ courses-media/
 ├── control/
 ├── acoustics/
 ├── projets-fil-rouge/
-└── tools/make_index.py   # régénère les pages et URLS.txt
+├── qr/                   # un QR code par média, prêt pour le polycopié (généré)
+├── update.cmd            # régénère tout et montre l'état git
+└── tools/
+    ├── make_index.py     # pages du site + URLS.txt
+    └── make_qr.py        # QR codes (PDF vectoriel, PNG en option)
 ```
 
 L'URL d'un fichier est donc :
@@ -67,17 +71,36 @@ successives.
 ## Ajouter un fichier
 
 ```bash
-cp mon-animation.gif electronics/pont-h.gif
-python tools/make_index.py
-git add -A && git commit -m "electronics: animation pont en H"
-git push
+copy mon-animation.gif electronics\pont-h.gif
+update.cmd
+git add -A && git commit -m "electronics: animation pont en H" && git push
 ```
 
-La mise en ligne prend environ une minute. L'URL à encoder dans le QR code est
-listée dans `URLS.txt`.
+La mise en ligne prend environ une minute.
 
 ## Ajouter un cours
 
-Créer le dossier, puis relancer `python tools/make_index.py`. Pour un titre
-affiché différent du nom de dossier, placer un fichier `.title` dans le dossier
-contenant le libellé souhaité.
+Créer le dossier, puis relancer `update.cmd`. Pour un titre affiché différent du
+nom de dossier, placer dans le dossier un fichier `.title` contenant le libellé
+souhaité.
+
+## QR codes
+
+`update.cmd` appelle `tools/make_qr.py`, qui écrit un QR par média dans
+`qr/<cours>/<nom>.pdf` :
+
+- niveau de correction **M** au minimum (relevé à Q ou H quand c'est gratuit) ;
+- **18 mm** de côté par défaut — `update.cmd --size 22` pour agrandir ;
+- PDF vectoriel aux dimensions exactes : dans le polycopié,
+  `\includegraphics{qr/electronics/pont-h.pdf}` sans option donne la bonne
+  taille ;
+- `--png` ajoute des PNG à 600 dpi.
+
+`qr/MANIFEST.txt` récapitule, pour chaque média, son URL et la ligne
+`\includegraphics` correspondante.
+
+Dépendance : `segno` (pur Python), à installer une fois par machine.
+
+## Mémo
+
+Voir [CHEATSHEET.md](CHEATSHEET.md) pour les commandes courantes.

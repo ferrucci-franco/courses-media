@@ -12,3 +12,7 @@ desktop.ini
 *.key
 *.psd
 *.ai
+
+# Python
+__pycache__/
+*.pyc

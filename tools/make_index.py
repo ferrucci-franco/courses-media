@@ -23,7 +23,7 @@ BASE_URL = "https://ferrucci-franco.github.io/courses-media"
 ROOT = Path(__file__).resolve().parent.parent
 
 # Dossiers ignores lors du scan des cours.
-SKIP_DIRS = {"tools", ".git", ".github"}
+SKIP_DIRS = {"tools", "qr", ".git", ".github"}
 
 MEDIA_EXT = {
     ".gif", ".png", ".jpg", ".jpeg", ".webp", ".svg",
