@@ -43,33 +43,44 @@ git pull
 
 ---
 
-## b) Agregar archivos y publicar
+## b) Cada vez que agregás GIF
 
-**1. Copiar los archivos** al directorio del curso que corresponda, con el
-Explorador o como prefieras:
+**1. Copiar** los archivos a la carpeta del curso, con el Explorador:
 
 ```
 courses-media\electronics\pont-h.gif
 ```
 
-Nombres en minúscula, con guiones, sin acentos ni espacios.
+Nombres en minúscula, con guiones, sin acentos ni espacios. Y semánticos:
+`pont-h.gif`, no `fig3.gif`.
 
-**2. Regenerar índices y QR codes:**
+**2. ¿Alguno pesa más de 2 Mo?** Miralo en el Explorador. Si sí, convertilo
+(ver *Convertir un GIF pesado a MP4* más abajo) y agregá el `.gif` a
+`.gitignore`. Si todos son livianos, saltá este paso.
+
+**3. Regenerar:**
 
 ```bash
 .\update.cmd
 ```
 
-Regenera `index.html`, las galerías, `URLS.txt` y los QR en `qr\`, y al final
-muestra qué cambió. Acepta opciones: `.\update.cmd --size 22 --png`.
+Rehace `index.html`, las galerías, las páginas de video, `URLS.txt` y los QR
+en `qr\`. Al final te muestra qué cambió.
 
-**3. Revisar y publicar:**
+**4. Publicar:**
 
 ```bash
 git add -A && git commit -m "electronics: animation pont en H" && git push
 ```
 
 El sitio se actualiza en aproximadamente un minuto.
+
+**5. Los QR** quedan en `qr\<curso>\<nombre>.pdf` (polycopié) y `.svg`
+(PowerPoint). `qr\MANIFEST.txt` lista cada archivo con su URL y la línea
+`\includegraphics` lista para pegar.
+
+> Los pasos 3 y 4 son siempre los mismos, agregues un archivo o veinte.
+> Lo único que exige criterio es el paso 2.
 
 ---
 
