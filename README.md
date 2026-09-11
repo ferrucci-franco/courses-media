@@ -91,10 +91,13 @@ souhaité.
 
 - niveau de correction **M** au minimum (relevé à Q ou H quand c'est gratuit) ;
 - **18 mm** de côté par défaut — `update.cmd --size 22` pour agrandir ;
-- PDF vectoriel aux dimensions exactes : dans le polycopié,
-  `\includegraphics{qr/electronics/pont-h.pdf}` sans option donne la bonne
-  taille ;
-- `--png` ajoute des PNG à 600 dpi.
+- deux formats vectoriels par défaut, tous deux à la taille physique exacte :
+  - **`.pdf`** pour le polycopié : `\includegraphics{qr/signals/complexfine.pdf}`
+    sans option donne la bonne dimension ;
+  - **`.svg`** pour PowerPoint 2021, qui n'importe pas le PDF mais accepte le
+    SVG (Insertion > Images) et l'insère à la bonne taille ;
+- `--formats pdf,svg,png` ajoute des PNG à 600 dpi pour les outils sans support
+  vectoriel.
 
 `qr/MANIFEST.txt` récapitule, pour chaque média, son URL et la ligne
 `\includegraphics` correspondante.

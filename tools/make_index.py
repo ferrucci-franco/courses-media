@@ -118,10 +118,17 @@ def media_files(d: Path) -> list[Path]:
     )
 
 
+def is_course_dir(p: Path) -> bool:
+    if not p.is_dir() or p.name.startswith(".") or p.name in SKIP_DIRS:
+        return False
+    # Un depot git imbrique (clone lance par erreur depuis la racine) n'est pas
+    # un cours : le prendre pour tel ecraserait son index.html.
+    return not (p / ".git").exists()
+
+
 def courses() -> list[Path]:
     return sorted(
-        (p for p in ROOT.iterdir()
-         if p.is_dir() and not p.name.startswith(".") and p.name not in SKIP_DIRS),
+        (p for p in ROOT.iterdir() if is_course_dir(p)),
         key=lambda p: p.name.lower(),
     )
 

@@ -15,12 +15,19 @@ estudiantes; esto es para vos.)
 ## a) Traer el repo a una computadora
 
 ```bash
-git clone https://github.com/ferrucci-franco/courses-media.git
+git clone https://github.com/ferrucci-franco/courses-media.git C:\Users\ferrucci\repos\courses-media
 ```
 
-Ejecutalo parado en la carpeta donde querés que quede (acá:
-`C:\Users\ferrucci\repos`). Crea el subdirectorio `courses-media` con todo
-adentro.
+El destino va explícito a propósito: si corrés `git clone` sin él estando ya
+**dentro** del repo, te crea un clon anidado (`courses-media\courses-media\`)
+que no sirve para nada y ensucia el `git add`. Si te pasa, borralo y listo — no
+tiene nada propio adentro.
+
+Para saber dónde estás parado:
+
+```bash
+pwd
+```
 
 Una vez por máquina, instalar la única dependencia:
 
@@ -122,14 +129,25 @@ donde está.
 
 ## Notas sobre los QR
 
+Por defecto se generan **dos formatos vectoriales**, ambos con el tamaño físico
+exacto:
+
+| Formato | Para qué | Cómo se usa |
+|---|---|---|
+| `.pdf` | Polycopié (LaTeX) | `\includegraphics{qr/signals/complexfine.pdf}` sin opciones |
+| `.svg` | PowerPoint 2021 | Insertar → Imágenes → seleccionar el `.svg` |
+| `.png` | Recurso de emergencia | `.\update.cmd --formats pdf,svg,png` |
+
+PowerPoint 2021 no importa PDF, pero sí SVG — y al ser vectorial se ve nítido
+proyectado y al imprimir. El SVG lleva `width="18mm"`, así que entra a la
+dimensión correcta sin que tengas que redimensionarlo a mano.
+
+Otros detalles:
+
 - Nivel de corrección **M** como mínimo (`segno` lo sube a Q o H cuando entra
   sin agrandar el código).
 - Tamaño por defecto **18 mm**, que con estas URLs da módulos de 0,40 mm —
-  justo en el límite práctico de impresión. Si algún QR cuesta escanearlo,
+  justo en el límite práctico de impresión. Si alguno cuesta escanearlo,
   `.\update.cmd --size 22`.
-- El PDF es vectorial y mide exactamente lo pedido: en LaTeX,
-  `\includegraphics{qr/electronics/pont-h.pdf}` sin opciones sale del tamaño
-  correcto.
-- `--png` agrega PNG a 600 dpi por si algún flujo no acepta PDF.
 - Nombres de archivo más cortos = URL más corta = menos módulos = QR más fácil
   de escanear a igual tamaño.
