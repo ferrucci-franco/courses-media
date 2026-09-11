@@ -1,0 +1,30 @@
+# QR codes generes par tools/make_qr.py
+# Taille : 18 mm  -  correction : M minimum  -  marge : 4 modules
+# Formats : pdf, svg
+
+## Traitement du signal
+complexfine.gif  ->  qr/signals/complexfine.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/signals/complexfine.gif
+    version 5, correction M
+    LaTeX       \includegraphics{qr/signals/complexfine.pdf}
+    PowerPoint  Insertion > Images > qr\signals\complexfine.svg
+complexspiral.gif  ->  qr/signals/complexspiral.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/signals/complexspiral.gif
+    version 5, correction M
+    LaTeX       \includegraphics{qr/signals/complexspiral.pdf}
+    PowerPoint  Insertion > Images > qr\signals\complexspiral.svg
+paire-conjuguee.mp4  ->  qr/signals/paire-conjuguee.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/signals/paire-conjuguee.html
+    version 5, correction M
+    LaTeX       \includegraphics{qr/signals/paire-conjuguee.pdf}
+    PowerPoint  Insertion > Images > qr\signals\paire-conjuguee.svg
+realfollow.gif  ->  qr/signals/realfollow.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/signals/realfollow.gif
+    version 5, correction M
+    LaTeX       \includegraphics{qr/signals/realfollow.pdf}
+    PowerPoint  Insertion > Images > qr\signals\realfollow.svg
+vecteur-tournant.mp4  ->  qr/signals/vecteur-tournant.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/signals/vecteur-tournant.html
+    version 5, correction M
+    LaTeX       \includegraphics{qr/signals/vecteur-tournant.pdf}
+    PowerPoint  Insertion > Images > qr\signals\vecteur-tournant.svg

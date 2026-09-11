@@ -1,2 +1,9 @@
 # URLs publiques - a encoder dans les QR codes.
 # Genere par tools/make_index.py : ne pas editer a la main.
+
+## Traitement du signal
+https://ferrucci-franco.github.io/courses-media/signals/complexfine.gif
+https://ferrucci-franco.github.io/courses-media/signals/complexspiral.gif
+https://ferrucci-franco.github.io/courses-media/signals/paire-conjuguee.html
+https://ferrucci-franco.github.io/courses-media/signals/realfollow.gif
+https://ferrucci-franco.github.io/courses-media/signals/vecteur-tournant.html

@@ -121,8 +121,10 @@ cat URLS.txt
 Arriba de ~2 Mo conviene convertir: pesa 10× menos y se ve igual.
 
 ```bash
-ffmpeg -i signals\animacion.gif -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart -an signals\animacion.mp4
+C:\Users\ferrucci\miniforge3\envs\thesys_01\Library\bin\ffmpeg.exe -i signals\animacion.gif -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart -an signals\animacion.mp4
 ```
+
+Si tenés el entorno `thesys_01` activado, alcanza con `ffmpeg` a secas.
 
 Qué hace cada parte: `scale=trunc(...)` fuerza dimensiones pares (H.264 las
 exige), `crf 20` da calidad alta para diagramas con texto fino, `faststart`
@@ -140,7 +142,7 @@ lo reproduce **en bucle y sin tocar nada**, igual que un GIF. Esa página es la
 que apuntan la galería y el QR: un `.mp4` abierto directo muestra un reproductor
 detenido que hay que arrancar a mano y se reproduce una sola vez.
 
-> `ffmpeg` no está instalado en esta máquina todavía.
+`ffmpeg` está instalado en el entorno `thesys_01`, junto con `segno`.
 
 ## Regla de oro
 

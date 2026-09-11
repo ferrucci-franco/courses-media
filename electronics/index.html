@@ -61,6 +61,15 @@ a { color: var(--accent); }
 .rows .sub { color: var(--muted); font-size: .8rem; white-space: nowrap; }
 .empty { color: var(--muted); font-style: italic; }
 footer { margin-top: 4rem; color: var(--muted); font-size: .8rem; }
+/* Pas de width:100% : la video garde sa taille naturelle, bornee par la
+   fenetre. Sinon un format presque carre se retrouve avec des bandes noires. */
+.player {
+  display: block; margin: 0 auto;
+  max-width: 100%; max-height: 80vh;
+  background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.hint { color: var(--muted); font-size: .8rem; margin-top: .6rem; }
 </style>
 </head>
 <body>
