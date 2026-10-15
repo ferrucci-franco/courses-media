@@ -28,6 +28,7 @@ SKIP_DIRS = {"tools", "qr", ".git", ".github"}
 MEDIA_EXT = {
     ".gif", ".png", ".jpg", ".jpeg", ".webp", ".svg",
     ".mp4", ".webm", ".mp3", ".wav", ".pdf",
+    ".cir",  # circuits Micro-Cap (téléchargement)
 }
 IMAGE_EXT = {".gif", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
 VIDEO_EXT = {".mp4", ".webm"}

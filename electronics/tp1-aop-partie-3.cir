@@ -1,0 +1,1655 @@
+[Main]
+FileType=CIR
+Version=12.00
+Program=Micro-Cap
+Component Version=10.00
+Shape Version=11.00
+Screen=1920,1080
+MCAPVersion=12.2.0.4
+Key ID=Demo
+NLCnt=33
+TXCnt=8
+
+[shapedef]
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Capacitor
+Line=0,0,22,0
+Line=22,-8,22,8
+Line=26,-8,26,8
+Line=26,0,48,0
+Current=32,12,16,12
+
+[shapedef]
+Name=Ground
+Line=0,0,12,0
+Line=12,-8,12,8
+Line=18,-4,18,4
+Line=24,0,24,0
+
+[shapedef]
+Name=Minus.root
+Line=-2,0,2,0
+
+[shapedef]
+Name=Opamp5
+Root="Opamp.root",0,0,0
+Root="Plus.root",25,-4,0
+Root="Minus.root",25,52,0
+Line=32,56,32,34
+Line=32,-8,32,13
+
+[shapedef]
+Name=Opamp.root
+Line=0,48,6,48
+Line=0,0,5,0
+Line=6,-4,6,52
+Line=6,-4,48,24
+Line=6,52,48,24
+Line=48,24,72,24
+Line=10,12,14,12
+Line=12,10,12,14
+Line=10,36,14,36
+Line=4,0,6,0
+
+[shapedef]
+Name=Plus.root
+Line=-2,0,2,0
+Line=0,-2,0,2
+
+[shapedef]
+Name=Resistor
+PolyOpen=12
+PolyLine=0,0
+PolyLine=0,0
+PolyLine=12,0
+PolyLine=14,-4
+PolyLine=18,4
+PolyLine=22,-4
+PolyLine=26,4
+PolyLine=30,-4
+PolyLine=34,4
+PolyLine=36,0
+PolyLine=48,0
+PolyLine=48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=SPICE_V
+Root="Vsource.root",0,0,0
+
+[shapedef]
+Name=Vsource.root
+Line=0,0,12,0
+Line=36,0,48,0
+Ellipse=12,-12,36,12
+FColor=None
+Line=7,5,7,9
+Root="Plus.root",41,7,0
+Current=32,16,16,16
+
+[compdef]
+Name=Opamp
+Definition=Opamp
+Shape=Opamp5
+Mask=5121
+Used=31
+memo=Opamp
+Label Offset=44,29,-14,39
+PinCnt=5
+Pin="Plus input",0,0,-31,-7
+Pin="Minus input",0,6,-33,20
+Pin="VEE",4,7,3,-5
+Pin="Output",9,3,-13,-4
+Pin="VCC",4,-1,5,14
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=6913
+Used=304
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=257
+Used=902
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
+Name=Voltage Source
+Definition=VSpice
+Shape=SPICE_V
+Mask=5377
+Used=227
+memo=Voltage Source
+Label Offset=19,13,15,13
+PinCnt=2
+Pin="Plus",6,0,-5,-6
+Pin="Minus",0,0,-20,-6
+
+[compdef]
+Name=Resistor
+Definition=Resistor
+Shape=Resistor
+Mask=6401
+Used=1178
+memo=Resistor
+Label Offset=18,6,8,11
+PinCnt=2
+Pin="Plus",6,0,-10,-4
+Pin="Minus",0,0,-14,-4
+
+[compdef]
+Name=Capacitor
+Definition=Capacitor
+Shape=Capacitor
+Mask=7425
+Used=229
+memo=Capacitor
+Label Offset=16,12,12,12
+PinCnt=2
+Pin="Plus",6,0,-3,-5
+Pin="Minus",0,0,-14,-5
+
+[Circuit]
+Window Placement=2,3, -1,-1, -9,-38, 0,0,1619,619
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+Default Object GridSnap=No
+NodeVoltageFormat=3
+CurrentFormat=3
+PowerFormat=3
+PathDelayFormat=3
+WarningFormat=3
+GridTextFormulaFormat=3
+Window Placement in Transient Analysis=0,1, -1,-1, -9,-38, 953,0,1906,751
+SpiceType=AMBIGUOUS
+Title_Block_Border=None
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Connection Warnings=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=Opamp
+Px=280,224
+Rot=4
+
+[Attr]
+ON=44,-47,PART
+V=X1
+Style=8192
+
+[Attr]
+ON=44,-65,MODEL
+V=TL081AC
+
+[Attr]
+ON=44,-101,PACKAGE
+V=DIP8
+
+[Comp]
+Name=Battery
+Px=480,200
+Rot=3
+
+[Attr]
+ON=-30,-49,PART
+V=V1
+Style=8192
+
+[Attr]
+ON=-30,-31,VALUE
+V=15
+Style=8192
+
+[Comp]
+Name=Ground
+Px=480,200
+Rot=7
+
+[Comp]
+Name=Battery
+Px=544,200
+Rot=3
+
+[Attr]
+ON=-30,-49,PART
+V=V2
+Style=8192
+
+[Attr]
+ON=-37,-31,VALUE
+V=-15
+Style=8192
+
+[Comp]
+Name=Ground
+Px=544,200
+Rot=7
+
+[Wire]
+Pxs=544,136,544,152
+
+[Wire]
+Pxs=480,136,480,152
+
+[Wire]
+Pxs=312,152,312,168
+
+[Wire]
+Pxs=312,232,312,248
+
+[Comp]
+Name=Ground
+Px=248,232
+Rot=1
+
+[Comp]
+Name=Voltage Source
+Px=152,232
+Rot=5
+
+[Attr]
+ON=15,-31,PART
+V=V3
+Style=8192
+
+[Attr]
+ON=15,-49,VALUE
+V=DC 0 AC 1 0 Pulse -5 5 100n 10n 10n {1/FREQ/2} {1/FREQ}
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Attr]
+ON=0,0,SMOOTHING
+V=N
+Style=256
+
+[Attr]
+ON=0,0,Saved_PulseS
+V=N
+Style=256
+
+[Attr]
+ON=0,0,FRACTION
+V=.2
+Style=256
+
+[Attr]
+ON=0,0,Saved_PulseF
+V=.2
+Style=256
+
+[Attr]
+ON=0,0,Saved_Pulse
+V=DC 0 AC 1 0 Pulse -5 5 100n 10n 10n {1/FREQ/2} {1/FREQ}
+Style=256
+
+[Attr]
+ON=0,0,Saved_Sin
+V=DC 0 AC 0 0 Sin 0 5 {FREQ} 0 0 0
+Style=256
+
+[Wire]
+Pxs=152,176,168,176
+
+[Wire]
+Pxs=152,176,152,184
+
+[Comp]
+Name=Ground
+Px=152,232
+Rot=1
+
+[Wire]
+Pxs=352,200,368,200
+
+[Wire]
+Pxs=384,200,392,200
+
+[Wire]
+Pxs=248,224,280,224
+
+[Wire]
+Pxs=248,224,248,232
+
+[Comp]
+Name=Resistor
+Px=200,176
+Rot=4
+
+[Attr]
+ON=18,-24,PART
+V=R1
+Style=8192
+
+[Attr]
+ON=18,-42,RESISTANCE
+V=1k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=288,56
+Rot=4
+
+[Attr]
+ON=18,-24,PART
+V=R2
+Style=8192
+
+[Attr]
+ON=18,-42,RESISTANCE
+V=10k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=248,176,264,176
+
+[Wire]
+Pxs=168,176,200,176
+
+[Wire]
+Pxs=264,56,288,56
+
+[Wire]
+Pxs=264,56,264,120
+
+[Wire]
+Pxs=264,176,280,176
+
+[Wire]
+Pxs=336,56,368,56
+
+[Wire]
+Pxs=368,200,384,200
+
+[Comp]
+Name=Capacitor
+Px=288,120
+Rot=4
+
+[Attr]
+ON=16,-30,PART
+V=C1
+Style=8192
+
+[Attr]
+ON=16,-48,CAPACITANCE
+V=10n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=336,120,368,120
+
+[Wire]
+Pxs=368,120,368,200
+
+[Wire]
+Pxs=264,120,288,120
+
+[Wire]
+Pxs=264,120,264,176
+
+[Wire]
+Pxs=368,56,368,120
+
+[Grid Text]
+Text=".DEFINE FREQ 30K"
+Px=352,288
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=312,248
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VE"
+Px=312,152
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=480,136
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VE"
+Px=544,136
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="out"
+Px=384,200
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="in"
+Px=168,176
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="TP 1 - Partie 3 : intégrateur (Miller)"
+Text="R1 = 1 k, C1 = 10 nF, R2 = 10 k en parallèle avec C1."
+Text="La fréquence se règle dans la ligne .DEFINE FREQ 30K"
+Text="(double-clic sur le texte pour la modifier)."
+Text=""
+Text="1. Signal carré ±5 V à 30 kHz : lancer l'analyse transitoire (F2)."
+Text="   v(out) est triangulaire."
+Text="   Valeur théorique : ?v(out) = Vm / (2·R1·C1·f) ˜ 8,3 V."
+Text="2. Faire varier FREQ entre 5K et 50K : à basse fréquence,"
+Text="   les flancs deviennent courbés (et la sortie peut saturer)."
+Text="3. Réponse sinusoïdale : double-cliquer sur la source et"
+Text="   choisir la forme Sin, avec : Sin 0 5 {FREQ}"
+Text="   À 30 kHz : amplitude théorique Vm / (2pf·R1·C1) ˜ 2,65 V,"
+Text="   sortie en avance de 90° sur l'entrée."
+RTF="{\rtf1\ansi\ansicpg1252\deff0\deflang1036{\fonttbl{\f0\fnil\fprq13\fcharset0 Consolas;}{\f1\fnil\fprq13\fcharset161 Consolas;}}"
+RTF="{\colortbl ;\red128\green0\blue128;\red0\green0\blue128;}"
+RTF="\viewkind4\uc1\pard\cf1\b\f0\fs16 TP 1 - Partie 3 : int\'e9grateur (Miller)\b0\par"
+RTF="\cf2 R1 = 1 k, C1 = 10 nF, R2 = 10 k en parall\'e8le avec C1.\par"
+RTF="La fr\'e9quence se r\'e8gle dans la ligne .DEFINE FREQ 30K\par"
+RTF="(double-clic sur le texte pour la modifier).\par"
+RTF="\par"
+RTF="1. Signal carr\'e9 \'b15 V \'e0 30 kHz : lancer l'analyse transitoire (F2).\par"
+RTF="   v(out) est triangulaire.\par"
+RTF="   Valeur th\'e9orique : \f1\'c4v(out) = Vm / (2\f0\'b7R1\'b7C1\'b7f) \u8776? 8,3 V.\par"
+RTF="2. Faire varier FREQ entre 5K et 50K : \'e0 basse fr\'e9quence,\par"
+RTF="   les flancs deviennent courb\'e9s (et la sortie peut saturer).\par"
+RTF="3. R\'e9ponse sinuso\'efdale : double-cliquer sur la source et\par"
+RTF="   choisir la forme Sin, avec : Sin 0 5 \{FREQ\}\par"
+RTF="   \'c0 30 kHz : amplitude th\'e9orique Vm / (2\f1\'f0f\f0\'b7R1\'b7C1) \u8776? 2,65 V,\par"
+RTF="   sortie en avance de 90\'b0 sur l'entr\'e9e.\par"
+RTF="}"
+Px=616,264
+Height=-13
+Color=#000080
+Font=Consolas
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=0.66666666666666663
+GridUser=10
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+CalcVoltage=True
+DisplayMeasure=Last
+ShareScales=True
+
+[Tools]
+Pos=Top
+FILESAVEASOLD=No
+BOM=No
+FILEPCB=No
+PROBE=Yes
+SELECT=Yes
+PAN=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+FLOWCHART=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+PARALLELOGRAM=No
+FC_PROCESS=No
+FC_ALT_PROCESS=No
+FC_DECISION=No
+FC_DATA=No
+FC_PREDEFPROCESS=No
+FC_INTERNALSTORAGE=No
+FC_DOCUMENT=No
+FC_MULTIDOCUMENT=No
+FC_TERMINATOR=No
+FC_PREPARATION=No
+FC_MANUALINPUT=No
+FC_MANUALOPERATION=No
+FC_CONNECTOR=No
+FC_OFFPAGECONNECTOR=No
+FC_PUNCHCARD=No
+FC_PUNCHEDTAPE=No
+FC_SUMMING_JUNCTION=No
+FC_OR=No
+FC_COLLATE=No
+FC_SORT=No
+FC_EXTRACT=No
+FC_MERGE=No
+FC_STORED_DATA=No
+FC_DELAY=No
+FC_SAS=No
+FC_MAGNETIC_DISK=No
+FC_DAS=No
+FC_DISPLAY=No
+SPREAD_SHEET=Yes
+POLYCLOS=No
+POLYOPEN=No
+FLAG=Yes
+INFO=Yes
+HELP=Yes
+HELP_SPICE=No
+LINK=Yes
+CHECK=Yes
+REGION_ENABLE=Yes
+TITLE_BLOCK=Yes
+DIGTRC=No
+DIGTRC2=No
+BUILD_COMMAND=Yes
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CONNWARN=Yes
+CROSS=Yes
+GRID=Yes
+BORDER=Yes
+BORDERONE=Yes
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+CIR_MAKEMACRO=No
+CLEARCUTWIRE=No
+CLIPBOARDCIRPAGE2BMM=No
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+REPLACE=No
+MODEL=Yes
+CIR2CKT=Yes
+ATTDISP=Yes
+ENABLE=Yes
+DISABLE=Yes
+ENABLE_WITH=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=Yes
+PAGEADD=Yes
+PAGEADDTEXT=No
+ADDSECTION=No
+PAGEDEL=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALECIR=Yes
+GOTOFLAG=Yes
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+DM_LAST=No
+DM_RMS=No
+DM_AVG=No
+DM_PEAK=No
+GRID_NONE=No
+GRID_NORMAL=No
+GRID_BOLD_5=No
+GRID_BOLD_6=No
+GRID_BOLD_USER=No
+GRAPH_PAPER=No
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+RENAMEDEFINE=No
+RENAMECMP=No
+ATTALIGN=No
+RESETNODEPOS=No
+FIT2STANDARD=No
+NODESNAP=No
+MOVETEXT=No
+TEXTINC=No
+TOGGLETEXT=No
+TOGGLEMODE=No
+TOLERANCE=No
+ALIGNAB=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
+
+[Section]
+Index=0
+Name="TP_AmpliOp_Partie_3-Integrateur"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=525
+TabSize 1=525
+TabSize 2=525
+TabSize 3=525
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+PrinterScale=1
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=0.66666666666666663
+Px=299,320
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Grid Text RTF=False
+Grid Text Angle=0
+Grid Text GridSnap=True
+Grid Text PinIt=False
+Grid Text JustifyH=Left
+Grid Text JustifyV=Bottom
+Grid GradientColor2=None
+Grid OutlineThickness=1
+Grid OutlineColor=None
+Component Color=#0000FF
+Attribute Text=Height=-15,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-12,FStyle=0,Color=#FF0000,Name=Arial
+Pin Marker Color=#008000
+Node Number=Height=-13,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=Height=-13,FStyle=0,Color=#000000,Name=Arial
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-18,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-13,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-13,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block Border=#000000
+Disabled	Color=#C0C0C0
+Search Color=#FFFF00
+Grid Color=#000000
+Graph Paper=#E4E4E4
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Block Select Color=#51F998
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+Font=Height=-18,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+Font=Height=-18,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+Font=Height=-18,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Text Area]
+Section=0
+Page=1
+
+[Text Area]
+Section=0
+Page=2
+Text=*** From file C:\Progs\MC12\library\NSOPAMP.LBR
+Text=*** Wide bandwidth quad JFET i/p opamp
+Text=.MODEL LF147 OPA (LEVEL=3 A=100K C=10p GBW=4MEG IBIAS=50p IOFF=25p ROUTAC=50
+Text=+ ROUTDC=75 SRN=17.5MEG SRP=13MEG TYPE=3 VNS=-12.9 VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Dual low power operational amplifier
+Text=.MODEL TL022C OPA (LEVEL=3 A=10K CMRR=3.98107K GBW=500K IOFF=15n IOSC=6m
+Text=+ ROUTAC=50 ROUTDC=75 TYPE=2 VNS=-12.4 VPS=12.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Dual low power operational amplifier
+Text=.MODEL TL022M OPA (LEVEL=3 A=19.9526K CMRR=3.98107K GBW=500K IBIAS=50n IOFF=5n
+Text=+ IOSC=6m ROUTAC=50 ROUTDC=75 TYPE=2 VNS=-12.4 VPS=12.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL031AC OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PD=6.5m PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3
+Text=+ VOFF=340u VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL031AM OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PD=6.5m PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3
+Text=+ VOFF=340u VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL031C OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PD=6.5m PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3
+Text=+ VOFF=500u VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL031M OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PD=6.5m PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3
+Text=+ VOFF=500u VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032AC OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=390u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032AI OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=390u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032AM OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=390u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032C OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=570u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032I OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=570u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL032M OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=570u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034AC OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=580u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034AI OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=580u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034AM OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=580u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034C OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=780u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034I OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=780u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET low-power low-offset
+Text=.MODEL TL034M OPA (LEVEL=3 A=14.3K CMRR=50.1187K GBW=1.1MEG IBIAS=2p IOFF=1p
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 SRN=5.1MEG SRP=2.9MEG TYPE=3 VNS=-13.3 VOFF=780u
+Text=+ VPS=13.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Quad low power opamp
+Text=.MODEL TL044C OPA (LEVEL=3 A=10K CMRR=3.98107K GBW=500K IOFF=15n PM=65
+Text=+ ROUTAC=50 ROUTDC=75 VNS=-12.4 VPS=12.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Quad low power opamp
+Text=.MODEL TL044M OPA (LEVEL=3 A=19.9526K CMRR=3.98107K GBW=500K IBIAS=50n IOFF=5n
+Text=+ PM=65 ROUTAC=50 ROUTDC=75 VNS=-12.4 VPS=12.4)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL051AI OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3.1MEG IBIAS=30p IOFF=5p
+Text=+ PM=62 ROUTAC=50 ROUTDC=75 SRN=19.8MEG SRP=19.8MEG TYPE=3 VNS=-12.6 VOFF=590u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL051AM OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3.1MEG IBIAS=30p IOFF=5p
+Text=+ PM=62 ROUTAC=50 ROUTDC=75 SRN=19.8MEG SRP=19.8MEG TYPE=3 VNS=-12.6 VOFF=350u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL051I OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3.1MEG IBIAS=30p IOFF=5p
+Text=+ PM=62 ROUTAC=50 ROUTDC=75 SRN=19.8MEG SRP=19.8MEG TYPE=3 VNS=-12.6 VOFF=590u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL051M OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3.1MEG IBIAS=30p IOFF=5p
+Text=+ PM=62 ROUTAC=50 ROUTDC=75 SRN=19.8MEG SRP=19.8MEG TYPE=3 VNS=-12.6 VOFF=590u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052AC OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=400u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052AI OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=400u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052AM OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=400u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052C OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=650u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052I OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=650u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL052M OPA (LEVEL=3 A=105K CMRR=44.6684K GBW=3MEG IBIAS=30p IOFF=5p
+Text=+ PM=63 ROUTAC=50 ROUTDC=75 SRN=17.8MEG SRP=17.8MEG TYPE=3 VNS=-12.6 VOFF=650u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054AC OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=500u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054AI OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=500u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054AM OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=500u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054C OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=560u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054I OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=560u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Enhanced JFET precision
+Text=.MODEL TL054M OPA (LEVEL=3 A=133K CMRR=39.8107K GBW=2.7MEG IBIAS=30p IOFF=5p
+Text=+ PM=64 ROUTAC=50 ROUTDC=75 SRN=15.9MEG SRP=15.9MEG TYPE=3 VNS=-12.6 VOFF=560u
+Text=+ VPS=13.3)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL060AC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL060BC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL060C OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL060I OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL061AC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL061BC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL061C OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL061I OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL062AC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL062BC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL062C OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL062I OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL064AC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL064BC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL064C OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL064I OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL066AC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL066BC OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL066C OPA (LEVEL=3 A=6K CMRR=6.30957K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL066I OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL066M OPA (LEVEL=3 A=6K CMRR=19.9526K IBIAS=30p IOFF=5p PD=6m ROUTAC=50
+Text=+ ROUTDC=75 SRN=3.5MEG SRP=3.5MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL070AC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL070BC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL070C OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL070I OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL071AC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL071BC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL071C OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL071I OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL071M OPA (LEVEL=3 CMRR=19.9526K IBIAS=65p IOFF=5p ROUTAC=50 ROUTDC=75
+Text=+ SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL072AC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL072BC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL072C OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL072I OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL072M OPA (LEVEL=3 CMRR=19.9526K IBIAS=65p IOFF=5p ROUTAC=50 ROUTDC=75
+Text=+ SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL074AC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL074BC OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL074C OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** Low power JFET-input opamp
+Text=.MODEL TL074I OPA (LEVEL=3 GBW=3MEG IBIAS=65p IOFF=5p PD=20m ROUTAC=50
+Text=+ ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL074M OPA (LEVEL=3 CMRR=19.9526K IBIAS=65p IOFF=5p ROUTAC=50 ROUTDC=75
+Text=+ SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL080AC OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL080C OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input opamp
+Text=.MODEL TL080I OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=20m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input opamp
+Text=.MODEL TL080M OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=20m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL081AC OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL081BC OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL081C OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input opamp
+Text=.MODEL TL081I OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=20m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input opamp
+Text=.MODEL TL081M OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=20m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL082AC OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+Text=*** From file C:\Progs\MC12\library\TIOPAMP.LBR
+Text=*** JFET-input operational amplifier
+Text=.MODEL TL082BC OPA (LEVEL=3 CMRR=19.9526K GBW=3MEG IBIAS=30p IOFF=5p PD=60m
+Text=+ ROUTAC=50 ROUTDC=75 SRN=13MEG SRP=13MEG TYPE=3 VNS=-12.9 VOFF=3m VPS=12.9)
+
+[InfoPage]
+InfoPage=True
+Warnings=True
+System=True
+Defines=True
+Array=True
+Model=True
+Measure=True
+MacroSubckt=True
+NotUsed=True
+ComponentCounts=True
+VariablizePaths=False
+DontShowPaths=False
+SimulationLog=True
+
+[Transient]
+WinID=1
+Window Placement=0,1, -1,-1, -9,-38, 0,0,953,747
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+OperPoint=False
+OperPointOnly=False
+AutoScaleRanges=True
+FixedTimeStep=False
+DoPSS=False
+PSS_Periods="1"
+PSS_Iterations="5"
+PSS_Error="1u"
+PSS_ShowPlots=True
+FFT_NPts="8192"
+FFT_IncludeDCHarmonic=False
+FFT_AutoScale_Harmonics="10"
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=3
+MonPageWidth=81
+MonPlotWidth=25
+MonExprXWidth=159
+MonExprYWidth=381
+MonRangeXWidth=111
+MonRangeYWidth=111
+AnimateWait=None
+AnimateWaitTime=500
+AnimatePressAfter=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=False
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Operating Point=True
+Num Out Write Measurement Values=True
+Num Out Write Tolerance Detail=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Low="TSTART"
+Num Out High="TMAX"
+Num Out Font=Height=-18,FStyle=0,Color=#000000,Name=Courier New
+Num Out Format=3
+Num Out HideNonSelected=False
+Num Out UseActualDataPoints=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=Yes
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
+
+[APage]
+Analysis=Transient
+Name="MAIN"
+
+[Monte Carlo Options]
+Analysis=Transient
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Limits]
+Analysis=Transient
+TMax=10/FREQ
+TStart=0
+TStep=1/FREQ/100
+NPts=51
+Temp=27
+RetraceRuns=1
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=1
+XExp=T
+YExp=v(in)
+XRng=0.000333333
+YRng=15,-10
+Options=LINEARX,LINEARY
+Range Grid X=6.66667e-5
+Range Grid Y=5
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=2
+XExp=T
+YExp=v(out)
+XRng=0.000333333
+YRng=15,-10
+Options=LINEARX,LINEARY
+Range Grid X=6.66667e-5
+Range Grid Y=5
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+AliasID=-1
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+CurrentPage 0="MAIN"
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=HmDistortion
+
+[Pane]
+Analysis=ImDistortion
+
+[Pane]
+Analysis=Stability
+
+[Watch]
+Analysis=Transient
+Format=3
+ExprPercentWidth=80
+
+[WCTolerance]
+Var Width=125
+Nominal Width=90
+Tol Width=190
+Tol Name=Drift
+Col Width Neq=63
+Col Width Pos=63
+Col Width Rnd=63
+
+[WCFiles]
+UseFile=<Library>Standard.tlib
+AVAILABLE_FILE=<Library>Standard.tlib
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=HmDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=ImDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=Stability
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicAC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicDC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0

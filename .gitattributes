@@ -13,3 +13,6 @@
 *.md    text eol=lf
 *.py    text eol=lf
 *.cmd   text eol=crlf
+
+# Circuits Micro-Cap : fichiers Windows, ne pas toucher aux fins de ligne
+*.cir   binary

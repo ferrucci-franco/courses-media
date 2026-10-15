@@ -2,6 +2,23 @@
 # Taille : 18 mm  -  correction : M minimum  -  marge : 4 modules
 # Formats : pdf, svg
 
+## Électronique
+tp1-aop-partie-1.cir  ->  qr/electronics/tp1-aop-partie-1.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/electronics/tp1-aop-partie-1.cir
+    version 5, correction M
+    LaTeX       \includegraphics{qr/electronics/tp1-aop-partie-1.pdf}
+    PowerPoint  Insertion > Images > qr\electronics\tp1-aop-partie-1.svg
+tp1-aop-partie-2.cir  ->  qr/electronics/tp1-aop-partie-2.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/electronics/tp1-aop-partie-2.cir
+    version 5, correction M
+    LaTeX       \includegraphics{qr/electronics/tp1-aop-partie-2.pdf}
+    PowerPoint  Insertion > Images > qr\electronics\tp1-aop-partie-2.svg
+tp1-aop-partie-3.cir  ->  qr/electronics/tp1-aop-partie-3.{pdf/svg}
+    https://ferrucci-franco.github.io/courses-media/electronics/tp1-aop-partie-3.cir
+    version 5, correction M
+    LaTeX       \includegraphics{qr/electronics/tp1-aop-partie-3.pdf}
+    PowerPoint  Insertion > Images > qr\electronics\tp1-aop-partie-3.svg
+
 ## Traitement du signal
 complexfine.gif  ->  qr/signals/complexfine.{pdf/svg}
     https://ferrucci-franco.github.io/courses-media/signals/complexfine.gif
